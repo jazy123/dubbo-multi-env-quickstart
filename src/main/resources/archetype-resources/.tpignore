@@ -1,0 +1,16 @@
+\Q/.settings/\E.*
+\Q/.classpath\E
+\Q/.project\E
+\Q/target/\E.*
+\.settings
+\.classpath
+\.project
+\target
+\Q/${artifactId}-services-api/.settings/\E.*
+\Q/${artifactId}-services-api/target/\E.*
+\Q/${artifactId}-services-api/.classpath\E
+\Q/${artifactId}-services-api/.project\E
+\Q/${artifactId}-services-provider/.settings/\E.*
+\Q/${artifactId}-services-provider/target/\E.*
+\Q/${artifactId}-services-provider/.classpath\E
+\Q/${artifactId}-services-provider/.project\E

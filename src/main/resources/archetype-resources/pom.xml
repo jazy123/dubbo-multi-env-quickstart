@@ -1,0 +1,207 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>${groupId}</groupId>
+	<artifactId>${artifactId}</artifactId>
+	<version>${version}</version>
+	<packaging>pom</packaging>
+
+	<name>${artifactId}</name>
+	<url>http://maven.apache.org</url>
+
+	<modules>
+		<module>${artifactId}-services-api</module>
+		<module>${artifactId}-services-provider</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>4.3.4.RELEASE</spring.version>
+		<mybatis.version>3.4.1</mybatis.version>
+		<mybatis.spring.version>1.3.0</mybatis.spring.version>
+		<jdbc.groupId>mysql</jdbc.groupId>
+		<jdbc.artifactId>mysql-connector-java</jdbc.artifactId>
+		<jdbc.version>5.1.40</jdbc.version>
+		<junit.version>4.12</junit.version>
+		<springtestdbunit.version>1.3.0</springtestdbunit.version>
+
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- —————————————————————————————project——————————————————————————————————————————————————————————————————————————————————————————— -->
+			<dependency>
+				<groupId>${groupId}</groupId>
+				<artifactId>${artifactId}-services-api</artifactId>
+				<version>${version}</version>
+			</dependency>
+			<!-- —————————————————————————————spring——————————————————————————————————————————————————————————————————————————————————————————— -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>1.6.8</version>
+			</dependency>
+			<dependency>
+				<groupId>javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<version>3.12.0.GA</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.6.1</version>
+			</dependency>
+			<!-- —————————————————————————————hibernate or mybatis——————————————————————————————————————————————————————————————————————————————————————————— -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis.spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper</artifactId>
+				<version>4.1.6</version>
+			</dependency>
+			<!-- —————————————————————————————servlet——————————————————————————————————————————————————————————————————————————————————————————— -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.0.1</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet.jsp</groupId>
+				<artifactId>jsp-api</artifactId>
+				<version>2.2.1-b03</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- —————————————————————————————unit-test——————————————————————————————————————————————————————————————————————————————————————————— -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.dbunit</groupId>
+				<artifactId>dbunit</artifactId>
+				<version>2.4.8</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-api</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.springtestdbunit</groupId>
+				<artifactId>spring-test-dbunit</artifactId>
+				<version>${springtestdbunit.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.cnki.commons</groupId>
+				<artifactId>commons-dao-test</artifactId>
+				<version>1.0.1-RELEASE</version>
+			</dependency>
+			<!-- —————————————————————————————jdbc——————————————————————————————————————————————————————————————————————————————————————————— -->
+			<dependency>
+				<groupId>${jdbc.groupId}</groupId>
+				<artifactId>${jdbc.artifactId}</artifactId>
+				<version>${jdbc.version}</version>
+			</dependency>
+			<!-- —————————————————————————————dubbo——————————————————————————————————————————————————————————————————————————————————————————— -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>dubbo</artifactId>
+				<version>2.8.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.zookeeper</groupId>
+				<artifactId>zookeeper</artifactId>
+				<version>3.4.6</version>
+			</dependency>
+			<dependency>
+				<groupId>com.101tec</groupId>
+				<artifactId>zkclient</artifactId>
+				<version>0.4 </version>
+			</dependency>
+			<!-- —————————————————————————————common utils——————————————————————————————————————————————————————————————————————————————————————————— -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.4</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>cnki</id>
+			<name>cnki release</name>
+			<url>http://192.168.107.240:8081/nexus/content/repositories/cnki/</url>
+		</repository>
+		<snapshotRepository>
+			<id>cnki-snapshots</id>
+			<name>CNKI SnapShots</name>
+			<url>http://192.168.107.240:8081/nexus/content/repositories/cnki-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+</project>

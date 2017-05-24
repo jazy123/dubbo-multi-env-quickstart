@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="service-archetype">
+	<fileSets>	
+		<!-- module service define -->
+		<fileSet filtered="true" packaged="false">
+			<directory>__rootArtifactId__-services-api</directory>
+			<includes>
+				<include>*.xml</include>
+				<include>*.tfignore</include>
+				<include>*.tpignore</include>
+				<include>*.classpath</include>
+				<include>*.project</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="true">
+			<directory>__rootArtifactId__-services-api/src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="false">
+			<directory>__rootArtifactId__-services-api/src/main/resources</directory>
+			<includes>
+				<include>**/*.properties</include>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+		<!-- module service implement define -->
+		<fileSet filtered="true" packaged="false">
+			<directory>__rootArtifactId__-services-provider</directory>
+			<includes>
+				<include>*.xml</include>
+				<include>*.tfignore</include>
+				<include>*.tpignore</include>
+				<include>*.classpath</include>
+				<include>*.project</include>
+			</includes>
+		</fileSet>		
+		<fileSet filtered="true" packaged="false">
+			<directory>__rootArtifactId__-services-provider</directory>
+			<includes>
+				<include>*.sh</include>
+				<include>*.bat</include>
+			</includes>
+		</fileSet>		
+		<fileSet filtered="true" packaged="true">
+			<directory>__rootArtifactId__-services-provider/src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="false">
+			<directory>__rootArtifactId__-services-provider/src/main/resources
+			</directory>
+			<includes>
+				<include>**/*.properties</include>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="true">
+			<directory>__rootArtifactId__-services-provider/src/test/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="false">
+			<directory>__rootArtifactId__-services-provider/src/test/resources
+			</directory>
+			<includes>
+				<include>**/*.properties</include>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>				
+	</fileSets>
+</archetype-descriptor>
